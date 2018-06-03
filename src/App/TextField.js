@@ -16,11 +16,12 @@ class TextField extends Component {
     id: shortid.generate()
   }
   onChange = (e) => {
+    green('props', this.props)
     const name = e.target.name
     const value = e.target.value
     const id = this.state.id
     // green('TextField.onChange', `${id},${name}:${value}`)
-    this.props.handleChange(id, name, value)
+    // this.props.handleChange(id, name, value)
   }
   isError = () => {
     // green('this.props.value', this.props.value)
@@ -42,7 +43,7 @@ class TextField extends Component {
     return (
       <Fragment>
         <MuiTextField
-          onChange={e => this.onChange(e)}
+
           label={label}
           name={name}
           required={required}
@@ -54,5 +55,6 @@ class TextField extends Component {
     )
   }
 }
+// onChange={e => this.onChange(e)}
 
 export default TextField
